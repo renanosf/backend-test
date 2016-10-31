@@ -5,21 +5,15 @@
 </p>
 # backend-test
 
-Uma pessoa esta a procura de emprego e dentre as várias vagas que existem no mercado (disponibilizadas nesse <a href="https://github.com/catho/backend-test/blob/master/vagas.json">JSON</a>) e ela quer encontrar vagas que estejam de acordo com o que ela saiba fazer, seja direto pelo cargo ou atribuições que podem ser encontradas na descrição das vagas. Para atender essa necessidade precisamos:
+## Projeto
 
-- uma API simples p/ procurar vagas (um GET p/ procurar as vagas no .json disponibilizado);
-- deve ser possível procurar vagas por texto (no atributos title e description);
-- deve ser possível procurar vagas por uma cidade;
-- deve ser possível ordenar o resultado pelo salário (asc e desc);
+Foi utilizado o framework [codeigniter](https://www.codeigniter.com) e a biblioteca [codeigniter-restserver](https://github.com/chriskacerguis/codeigniter-restserver) para a realização desse projeto 
 
-O teste deve ser feito utilizando PHP (com ou sem framework, a escolha é sua). Esperamos como retorno, fora o GET da API funcionando, os seguintes itens:
+## Utilização
+Para utilizar este projeto basta clonar o repositorio dentro da pasta www do seu apache ou semelhante. Para realizar a busca da vaga faça uma requisição GET para webservice/vagas enviando os parâmetros de busca, cidade e ordem. Todos os parâmetros são opicinais, a ordenação é feita de forma ascendente se nada for enviado, para invertes envie "desc".
 
-- uma explicação do que é necessário para fazer seu projeto funcionar;
-- como executar os testes, se forem testes de unidade melhor ainda;
-- comentários nos códigos para nos explicar o que está sendo feito.
+1. http://localhost/webservice/vagas?busca=coordenador&cidade=Jose&ordem=desc
+2. http://localhost/webservice/vagas?busca=Desenvolvedor%20Java
 
-Lembre-se que na hora da avaliação olharemos para:
-
-- organização de código;
-- desempenho;
-- manutenabilidade.
+## Código
+A parte principal do código se encontra em catho_application/controllers/Webservice.php
